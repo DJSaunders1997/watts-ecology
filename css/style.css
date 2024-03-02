@@ -1,8 +1,9 @@
-/* style.css */
+/* Sets the default font for the entire body of the website to Arial, a sans-serif font. */
 body {
     font-family: Arial, sans-serif;
 }
 
+/* Centers the text in the header and footer sections, adds padding for space around the content, and sets a light gray background color. */
 header,
 footer {
     text-align: center;
@@ -10,36 +11,102 @@ footer {
     background-color: #f0f0f0;
 }
 
+/* Removes the default list styling from navigation lists to make it look cleaner. */
 nav ul {
     list-style-type: none;
     padding: 0;
 }
 
+/* Makes each list item in the navigation display inline (horizontally) instead of the default list behavior, and adds space to the right of each item. */
 nav ul li {
     display: inline;
     margin-right: 20px;
 }
 
+/* Styles all links in the website: removes the underline (text-decoration: none) and sets the color to a blue shade. */
 a {
     text-decoration: none;
     color: #007BFF;
 }
 
+/* Adds an underline to links when you hover over them, providing a visual cue that they are interactive. */
 a:hover {
     text-decoration: underline;
 }
 
+/* Adds padding around the main content area of the page for spacing. */
 main {
     padding: 20px;
 }
 
+/* Adds space below each section for better separation of content areas. */
 section {
     margin-bottom: 20px;
 }
 
+/* Initially sets the width of images with the class 'responsive-image' to 50% of their container's width, making them scale down on smaller screens. Height is set to auto to maintain the image's aspect ratio. */
 .responsive-image {
     width: 50%;
-    /* Adjust the width as needed, or use max-width for responsiveness */
     height: auto;
-    /* This maintains the aspect ratio */
 }
+
+.gallery-section {
+    /* Styles for the entire gallery section */
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+/* Sets the gallery section to block layout, limits its maximum width, automatically centers it on the page, and adds padding. */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    /* Additional grid styles */
+}
+
+/* Other styles remain the same */
+
+
+/* Adds space below each image container, hides overflow to ensure images fit neatly inside, adds rounded corners, and a subtle shadow for depth. */
+.image-container {
+    padding:0;
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensures that images fill the width of their container, removing any extra space below them and adding a zoom effect on hover for interactivity. */
+.responsive-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+/* Scales up the image slightly when the mouse hovers over it, adding a dynamic, interactive feel. */
+.image-container:hover .responsive-image {
+    transform: scale(1.1);
+}
+
+/* A media query that applies styles for screens wider than 768 pixels: it changes the gallery to a grid layout, allowing images to be displayed in a more structured and responsive manner. */
+@media (min-width: 768px) {
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+    }
+}
+
+/* Adds additional bottom margin to the gallery heading for spacing. */
+.gallery h2 {
+    margin-bottom: 20px;
+}
+
+/* Ensures that the gallery heading and paragraphs are block-level elements, meaning they will each take up the full width of their container, ensuring the paragraph appears below the heading. */
+/* .gallery h2,
+.gallery p {
+    display: block;
+    width: 100%;
+} */
