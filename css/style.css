@@ -98,7 +98,7 @@ section {
     background-color: rgba(0, 0, 0, 0.5); /* Dark semi-transparent background */
     color: white; /* White text color */
     text-align: center; /* Center-align text */
-    padding: 0px !important; /* Add padding for better readability */
+    padding: 20px !important; /* Add padding for better readability */
     position: absolute;
     bottom: 0px !important;
     left: 0px !important;
