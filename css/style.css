@@ -44,11 +44,6 @@ section {
     margin-bottom: 20px;
 }
 
-/* Styles for the entire gallery section */
-.gallery-section {
-    /*max-width: 1500px;*/
-}
-
 /* Sets the gallery section to block layout, limits its maximum width, automatically centers it on the page, and adds padding. */
 .gallery {
     display: grid;
