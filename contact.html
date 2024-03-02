@@ -26,14 +26,14 @@
             <p>We'd love to hear from you! Whether you have a question about our services or need assistance with your
                 ecological project, our team is here to help.</p>
 
-            <form action="submit-form-endpoint" method="POST" class="container ml-0" id="contactForm"> <!-- Replace with your form submission endpoint -->
+            <!-- Form for collecting user's name and message to send an email -->
+            <form class="container ml-0" id="contactForm"> <!-- Replace with your form submission endpoint -->
                 <div class="form-group row">
                     <label for="name" class="col-sm-2 col-form-label">Name:</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="name" name="name" required>
                     </div>
                 </div>
-
 
                 <div class="form-group row">
                     <label for="message" class="col-sm-2 col-form-label">Message:</label>
@@ -42,7 +42,8 @@
                     </div>
                 </div>
 
-                <button type="submit" class="btn btn-primary" onclick="sendEmail(); return false;">Send Message</button>
+                <!-- Button triggers the sendEmail function instead of submitting the form -->
+                <button type="submit" class="btn btn-primary" onclick="sendEmail()">Send Message</button>
             </form>
         </section>
     </main>
@@ -55,15 +56,17 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
         function sendEmail() {
-            event.preventDefault(); // This will prevent the default
-            const email = "info@wattsecology.com";
-            const emailSubjectText = "Ecology query";
-        
+            const email = "info@wattsecology.com"; // Recipient email address
+            const emailSubjectText = "Ecology query"; // Email subject line
+            const newline = '%0D%0A'; // URL-encoded newline character sequence for readability in email body
+
+            // Retrieves user input from the form
             const name = document.getElementById('name').value;
             const message = document.getElementById('message').value;
-            const subject = encodeURIComponent(emailSubjectText);
-            const emailBody = 'Name: ' + name + '%0D%0A' + message;
+            const subject = encodeURIComponent(emailSubjectText); // Encodes the subject for URL
+            const emailBody = `Name: ${name + newline + newline + message}`; // Formats the email body using string interpolation
         
+            // Constructs the mailto link and opens it, triggering the default email client
             window.location = `mailto:${email}?subject=${subject}&body=${emailBody}`;
         }
     </script>
