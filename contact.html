@@ -26,17 +26,28 @@
             <p>We'd love to hear from you! Whether you have a question about our services or need assistance with your
                 ecological project, our team is here to help.</p>
 
-            <form action="submit-form-endpoint" method="POST"> <!-- Replace with your form submission endpoint -->
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
+            <!-- Form for collecting user's name and message to send an email -->
+            <form class="container ml-0" id="contactForm"> <!-- Replace with your form submission endpoint -->
+                <div class="form-group row">
+                    <label for="name" class="col-sm-2 col-form-label">Name:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="name" name="name" required>
+                    </div>
+                </div>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
+                <div class="form-group row">
+                    <label for="message" class="col-sm-2 col-form-label">Message:</label>
+                    <div class="col-sm-10">
+                        <textarea id="message" class="form-control" name="message" rows="4" required></textarea>
+                    </div>
+                </div>
 
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-
-                <button type="submit">Send Message</button>
+                <!-- Button triggers the sendEmail function instead of submitting the form -->
+                <div class="form-group row">
+                    <div class="col-sm-12 text-right"> <!-- Use the text-right class to align the button to the right -->
+                        <button type="submit" class="btn btn-primary" onclick="sendEmail()">Send Email</button>
+                    </div>
+                </div>
             </form>
         </section>
     </main>
@@ -47,6 +58,22 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function sendEmail() {
+            const email = "info@wattsecology.com"; // Recipient email address
+            const emailSubjectText = "Ecology query"; // Email subject line
+            const newline = '%0D%0A'; // URL-encoded newline character sequence for readability in email body
+
+            // Retrieves user input from the form
+            const name = document.getElementById('name').value;
+            const message = document.getElementById('message').value;
+            const subject = encodeURIComponent(emailSubjectText); // Encodes the subject for URL
+            const emailBody = `Name: ${name + newline + newline + message}`; // Formats the email body using string interpolation
+        
+            // Constructs the mailto link and opens it, triggering the default email client
+            window.location = `mailto:${email}?subject=${subject}&body=${emailBody}`;
+        }
+    </script>
 </body>
 
 </html>
