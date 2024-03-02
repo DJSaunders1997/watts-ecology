@@ -3,7 +3,8 @@ body {
     font-family: Arial, sans-serif;
 }
 
-header, footer {
+header,
+footer {
     text-align: center;
     padding: 1em;
     background-color: #f0f0f0;
@@ -37,6 +38,8 @@ section {
 }
 
 .responsive-image {
-    width: 50%;    /* Adjust the width as needed, or use max-width for responsiveness */
-    height: auto;   /* This maintains the aspect ratio */
+    width: 50%;
+    /* Adjust the width as needed, or use max-width for responsiveness */
+    height: auto;
+    /* This maintains the aspect ratio */
 }
