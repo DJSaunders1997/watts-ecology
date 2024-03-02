@@ -35,3 +35,8 @@ main {
 section {
     margin-bottom: 20px;
 }
+
+.responsive-image {
+    width: 50%;    /* Adjust the width as needed, or use max-width for responsiveness */
+    height: auto;   /* This maintains the aspect ratio */
+}
