@@ -44,17 +44,9 @@ section {
     margin-bottom: 20px;
 }
 
-/* Initially sets the width of images with the class 'responsive-image' to 50% of their container's width, making them scale down on smaller screens. Height is set to auto to maintain the image's aspect ratio. */
-.responsive-image {
-    width: 50%;
-    height: auto;
-}
-
+/* Styles for the entire gallery section */
 .gallery-section {
-    /* Styles for the entire gallery section */
     max-width: 1200px;
-    margin: auto;
-    padding: 20px;
 }
 
 /* Sets the gallery section to block layout, limits its maximum width, automatically centers it on the page, and adds padding. */
@@ -64,9 +56,6 @@ section {
     gap: 20px;
     /* Additional grid styles */
 }
-
-/* Other styles remain the same */
-
 
 /* Adds space below each image container, hides overflow to ensure images fit neatly inside, adds rounded corners, and a subtle shadow for depth. */
 .image-container {
@@ -103,10 +92,3 @@ section {
 .gallery h2 {
     margin-bottom: 20px;
 }
-
-/* Ensures that the gallery heading and paragraphs are block-level elements, meaning they will each take up the full width of their container, ensuring the paragraph appears below the heading. */
-/* .gallery h2,
-.gallery p {
-    display: block;
-    width: 100%;
-} */
