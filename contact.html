@@ -12,10 +12,15 @@
 <body>
     <header>
         <h1>Contact Watts Ecology</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="contact.html">Contact</a></li>
+        <!-- Bootstrap Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" >
+            <ul class="navbar-nav flex-row">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="contact.html">Contact</a>
+                </li>
             </ul>
         </nav>
     </header>
@@ -32,7 +37,7 @@
                     <label for="name" class="col-sm-2 col-form-label">Name:</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="name" name="name" required>
-                    </div>
+                                       </div>
                 </div>
 
                 <div class="form-group row">
@@ -42,7 +47,7 @@
                     </div>
                 </div>
 
-                <!-- Button triggers the sendEmail function instead of submitting the form -->
+<!-- Button triggers the sendEmail function instead of submitting the form -->
                 <div class="form-group row">
                     <div class="col-sm-12 text-right"> <!-- Use the text-right class to align the button to the right -->
                         <button type="submit" class="btn btn-primary" onclick="sendEmail()">Send Email</button>

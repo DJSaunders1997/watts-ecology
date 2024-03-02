@@ -44,11 +44,6 @@ section {
     margin-bottom: 20px;
 }
 
-/* Styles for the entire gallery section */
-.gallery-section {
-    max-width: 1200px;
-}
-
 /* Sets the gallery section to block layout, limits its maximum width, automatically centers it on the page, and adds padding. */
 .gallery {
     display: grid;
@@ -91,4 +86,30 @@ section {
 /* Adds additional bottom margin to the gallery heading for spacing. */
 .gallery h2 {
     margin-bottom: 20px;
+}
+
+/* Darkens the carousel caption text */
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.5); /* Dark semi-transparent background */
+    color: white; /* White text color */
+    text-align: center; /* Center-align text */
+    padding: 20px !important; /* Add padding for better readability */
+    position: absolute;
+    bottom: 0px !important;
+    left: 0px !important;
+    right: 0px !important;
+}
+
+/* Centers the carousel horizontally */
+#galleryCarousel {
+    display: block; /* Ensures the carousel is displayed as a block element */
+    margin: 0 auto; /* Center the carousel horizontally */
+    max-width: 1200px;
+}
+
+/* Reduces the font size of the carousel caption on mobile devices */
+@media (max-width: 768px) {
+    .carousel-caption {
+        font-size: 10px; /* Adjust the font size as needed */
+    }
 }
